@@ -1,0 +1,4 @@
+-cp haxe
+-main Main
+
+-js scripts/index.js
