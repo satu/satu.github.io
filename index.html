@@ -15,7 +15,54 @@
         background-color: yellow; 
 	}
 body{
-    animation: v 2s infinite;
+    animation: v 45s infinite;
+    color:black;
+    font-family:'helvetica';
+    padding: 20px;
+}
+.headerstyle {
+	background-color: #8cbfd4; 
+	color: white; 
+	padding: 20px; 
+	text-align: center;
+	font-size: 3em;
+	width: 90%;
+	margin: auto; 
+}
+h2 {
+	background-color: #a4ddf5; 
+	color: white;
+	padding: 20px;
+	text-align: center; 
+	width: 90%; 
+	margin-left: auto;
+	margin-right: auto;
+} 
+h3 { 
+background-color:#a4ddf5 ;
+color: white;
+padding:15px;
+padding-right: 20px; 
+padding-left: 20px;
+text-align: center; 
+width:90%;
+margin-left:auto;
+margin-right: auto;
+ }
+
+.content {
+background-color: white;
+color:#41494d ;	
+width: 90%;
+padding: 20px;
+margin-left: auto;
+margin-right: auto;
+}
+.paragraph { 
+text-align: center;
+}
+.list { 
+text-align: left;
 }
 
 @keyframes v{
@@ -28,38 +75,38 @@ body{
 }
 </style>
 </head>
-<body style="color:black;font-family:'comic sans ms'">
-	<h1 style="background-color: blue;">Dario's story</h1> 
+<body>
+	<h1 class="headerstyle">Dario's story</h1> 
 	<h2>Bio</h2> 
-	<p>Dario is a proud Sicilian, currently living in <a href="https://goo.gl/maps/2Vf9piu4KWBKNoEZ7" target="_blank">Brighton, UK</a>. He really likes <a href="#nutella">Nutella</a>. </p>
+	<div class="content paragraph"><p>Dario is a proud Sicilian, currently living in <a href="https://goo.gl/maps/2Vf9piu4KWBKNoEZ7" target="_blank">Brighton, UK</a>. He really likes <a href="#nutella">Nutella</a>. </p></div>
 	
 	<h2>Online presence</h2>
-	<p><a href="https://twitch.tv/stuck_overflow" target=_blank>Watch Dario and Fisken struggling with Rust</a></p> 
-	<p><a href="https://twitch.tv/dario_satu" target=_blank>Watch Dario's brilliant girlfriend taking on web development (she already knows SQL!)</a></p>
+	<div class="list content"><ul><li><a href="https://twitch.tv/stuck_overflow" target=_blank>Watch Dario and Fisken struggling with Rust</a></li> 
+	<li><a href="https://twitch.tv/dario_satu" target=_blank>Watch Dario's brilliant girlfriend taking on web development (she already knows SQL!)</a></li></ul></div>
 
 	<h2>Music career</h2>
-	<img src="https://i.imgur.com/hcO730D.png" alt="Dario playing drums, sexy" style="width:250px;" title="sexy male drummer" usemap="#coolmap"> 
-	<map name="coolmap"><area shape="rect" coords="160, 170, 240, 260" href="https://en.wikipedia.org/wiki/Drum" target="_blank"></map>
+	<div class="content paragraph" style="background:none"><img src="https://i.imgur.com/hcO730D.png" alt="Dario playing drums, sexy" style="width:350px;" title="sexy male drummer" usemap="#coolmap"> 
+	<map name="coolmap"><area shape="rect" coords="260, 270, 340, 360" href="https://en.wikipedia.org/wiki/Drum" target="_blank"></map></div>
 
-<div style="background-image: url('https://www.vividdoors.co.uk/images/source/rawpixel-593612-unsplash.jpg'); background-size: 100px 100px; color:white;">
+
 	<h2 id="nutella">Nutella presentation</h2>  
-	<p>Dario is a big fan of Nutella and wants to share his passion and knowledge with all of you!</p> 
-<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQMH4PrE7W-gLhu1lDXYf0HcvnCPXp2eHIel2rJSdT1xLf1AIWZH8RljaeTx3wPBnkJ4ZendRL90wSx/embed?start=true&loop=true&delayms=3000" frameborder="0" width="480" height="299" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></div> 
+	<div class="content paragraph"><p>Dario is a big fan of Nutella and wants to share his passion and knowledge with all of you!</p> 
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQMH4PrE7W-gLhu1lDXYf0HcvnCPXp2eHIel2rJSdT1xLf1AIWZH8RljaeTx3wPBnkJ4ZendRL90wSx/embed?start=true&loop=true&delayms=3000" frameborder="0" width="480" height="299" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></div>
 
 	<h2>Online friends</h2> 
-	<ul> 
+	<div class="content list"><ul> 
 		<li><a href="https://github.com/LordMZTE" target="_blank">LordMZTE</a> - adds rainbows to your life! ask him about Python</li>
 		<li><a href="https://github.com/sosodev" target="_blank">sosodev</a> - makes Nutella rain</li>
 		<li>adomaspal - knows all the answers, or will Google them</li> 
 		<li>nyxiative - supports quality</li>
 		<li><a href="https://twitch.tv/codico">codico - not from Finland</a></li>
-	</ul>
+	</ul></div>
 
 	<h2>Crafting</h2> 
 	<h3>Crocheting</h3> 
 	<h3>Knitting</h3> 
-	<p>Review Dario's all unfinished projects, including several jumpers he promised to his girlfriend</p> 
-	<table> 
+	<div class="content paragraph"><p>Review Dario's all unfinished projects, including several jumpers he promised to his girlfriend</p> 
+	<table style="margin-left: auto; margin-right:auto"> 
 		<tr>
 		<th>Item</th>
 		<th>Status</th>
@@ -75,21 +122,22 @@ body{
 		<td>Unfinished</td>
 		<td>Spring 2022</td>
 	</tr>
-</table> 
+</table> </div>
 
 	
 
 	<h3>Sewing</h3> 
 
 	<h2>Cat of the day</h2> 
-	<a href="https://www.cats.org.uk/" target="_blank"><img src="https://cataas.com/cat/gif" width="200" alt="enjoy this cute kitty"></a>
+	<div class="paragraph content"><a href="https://www.cats.org.uk/" target="_blank"><img src="https://cataas.com/cat/gif" width="200" alt="enjoy this cute kitty"></a>
 
 	<p> Make plans to dominate world and then take a nap gimme attention gimme attention gimme attention gimme attention gimme attention gimme attention just kidding i don't want it anymore meow bye eat the rubberband sit on human they not getting up ever yet stare at ceiling. 
-</p>
+</p></div>
 
 	
 <h2 style="background-color: tomato">Brought to you by</h2>
-	<img src="images/jj-hackerman.gif" alt="super cool girl" title="super cool girl">
+	
+	<div class="content paragraph" style="background:none"><img src="images/jj-hackerman.gif" alt="super cool girl" title="super cool girl"></div>
 
 </body>
 </html>
