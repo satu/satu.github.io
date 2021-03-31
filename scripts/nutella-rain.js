@@ -1,5 +1,6 @@
 // just a little script to make it rain nutella
-document.addEventListener("DOMContentLoaded", function () {
+//document.addEventListener("DOMContentLoaded", 
+function startRain() {
   const nutellas = []; // array to track the nutella images we create
   const nutellaCount = 33; // how many nutellas we want to spawn
   const nutellaSpeed = 2; // how many pixels the nutella falls each frame
@@ -52,4 +53,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // animate the nutella at roughly 60 fps
   setInterval(animate, 16);
-});
+};
