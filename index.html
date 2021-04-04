@@ -3,81 +3,7 @@
 <head>
 	<title>Dario's story</title>
 	<script src="scripts/nutella-rain.js"></script>
-<style>
-	table, th, td {
-		border:1px solid blue;
-		padding: 15px;
-	}
-	table {
-        background-color: blue; 
-	}
-	th, td {
-        background-color: yellow; 
-	}
-body{
-    animation: v 45s infinite;
-    color:black;
-    font-family:'helvetica';
-    padding: 20px;
-}
-.headerstyle {
-	background-color: #8cbfd4; 
-	color: white; 
-	padding: 20px; 
-	text-align: center;
-	font-size: 3em;
-	width: 90%;
-	margin: auto; 
-}
-h2 {
-	background-color: #a4ddf5; 
-	color: white;
-	padding: 20px;
-	text-align: center; 
-	width: 90%; 
-	margin-left: auto;
-	margin-right: auto;
-} 
-h3 { 
-background-color:#a4ddf5 ;
-color: white;
-padding:15px;
-padding-right: 20px; 
-padding-left: 20px;
-text-align: center; 
-width:90%;
-margin-left:auto;
-margin-right: auto;
- }
-
-.content {
-background-color: white;
-color:#41494d ;	
-width: 90%;
-padding: 20px;
-margin-left: auto;
-margin-right: auto;
-}
-.paragraph { 
-text-align: center;
-}
-.list { 
-text-align: left;
-}
-
-a {
-  color: #41494d;
-}
-
-@keyframes v{
-  0% {background:linear-gradient(to top, orange, yellow, green, cyan, blue, violet);}
-  20% {background:linear-gradient(to top, yellow, green, cyan, blue, violet, orange);}
-  40% {background:linear-gradient(to top, green, cyan, blue, violet, orange, yellow);}
-  60% {background:linear-gradient(to top, cyan, blue, violet, orange, yellow, green);}
-  80% {background:linear-gradient(to top, blue, violet, orange, yellow, green, cyan);}
-  100% {background:linear-gradient(to top, violet, orange, yellow, green, cyan, blue);}
-}
-</style>
+<link rel="stylesheet" href="index_style.css">
 </head>
 <body>
 	<h1 class="headerstyle">Dario's story</h1> 
@@ -90,7 +16,7 @@ a {
 	
 	<h2>Online presence</h2>
 	<div class="list content"><ul><li><a href="https://twitch.tv/stuck_overflow" target=_blank>Watch Dario and Fisken struggling with Rust</a></li> 
-	<li><a href="https://twitch.tv/dario_satu" target=_blank>Watch Dario's brilliant girlfriend taking on web development (she already knows SQL!)</a></li></ul></div>
+	<li><a href="https://twitch.tv/dario_satu" target=_blank>Watch JJ, Dario's brilliant girlfriend, taking on web development (she already knows SQL!)</a></li></ul></div>
 
 	<h2>Music career</h2>
 	<div class="content paragraph" style="background:none"><img src="https://i.imgur.com/hcO730D.png" alt="Dario playing drums, sexy" style="width:350px;" title="sexy male drummer" usemap="#coolmap"> 
@@ -119,7 +45,7 @@ a {
 	<h3>Crocheting</h3> 
 	<h3>Knitting</h3> 
 	<div class="content paragraph"><p>Review Dario's all unfinished projects, including several jumpers he promised to his girlfriend</p> 
-	<table style="margin-left: auto; margin-right:auto"> 
+	<table style="margin-left: auto; margin-right:auto; border-radius:25px;"> 
 		<tr>
 		<th>Item</th>
 		<th>Status</th>

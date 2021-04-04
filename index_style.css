@@ -1,0 +1,81 @@
+table, th, td {
+		border:1px solid blue;
+		padding: 15px;
+	}
+	table {
+        background-color: blue; 
+	}
+	th, td {
+        background-color: yellow; 
+	}
+body{
+    animation: v 45s infinite;
+    color:black;
+    font-family:/* this is comment */ 'helvetica';
+    padding: 20px;
+
+}
+.headerstyle {
+	background-color: #8cbfd4; 
+	color: white; 
+	padding: 20px; 
+	text-align: center;
+	font-size: 3em;
+	width: 90%;
+	margin: auto; 
+	border-radius:25px;
+
+}
+h2 {
+	background-color: rgba(164, 221, 245, 0.5); 
+	color: white;
+	padding: 20px;
+	text-align: center; 
+	width: 90%; 
+	margin-left: auto;
+	margin-right: auto;
+	border-radius:25px;
+} 
+h3 { 
+background-color: rgba(164, 221, 245, 0.5);
+color: white;
+padding:15px;
+padding-right: 20px; 
+padding-left: 20px;
+text-align: center; 
+width:90%;
+margin-left:auto;
+margin-right: auto;
+border-radius:25px;
+
+ }
+
+.content {
+background-color: rgba(252, 252, 252, 0.5);
+color:#41494d ;	
+width: 90%;
+padding: 20px;
+margin-left: auto;
+margin-right: auto;
+border-radius:25px;
+
+}
+.paragraph { 
+text-align: center;
+}
+.list { 
+text-align: left;
+}
+
+a {
+  color: #41494d;
+}
+
+@keyframes v{
+  0% {background:linear-gradient(to top, orange, yellow, green, cyan, blue, violet);}
+  20% {background:linear-gradient(to top, yellow, green, cyan, blue, violet, orange);}
+  40% {background:linear-gradient(to top, green, cyan, blue, violet, orange, yellow);}
+  60% {background:linear-gradient(to top, cyan, blue, violet, orange, yellow, green);}
+  80% {background:linear-gradient(to top, blue, violet, orange, yellow, green, cyan);}
+  100% {background:linear-gradient(to top, violet, orange, yellow, green, cyan, blue);}
+}
