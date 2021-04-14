@@ -49,8 +49,9 @@ function startRain() {
         nutellaSprite.style.top = yCoordinate + nutellaSpeed + "px";
       }
     });
+    requestAnimationFrame(animate);
   }
 
-  // animate the nutella at roughly 60 fps
-  setInterval(animate, 16);
+  // animate the nutella at the framerate of the browser (usually 60 fps)
+  requestAnimationFrame(animate);
 };
