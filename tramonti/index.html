@@ -680,6 +680,8 @@ svg.leaflet-image-layer.leaflet-interactive path {
   html{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.45;-webkit-text-size-adjust:100%}
   body{margin:0;min-height:100vh}
   a{color:var(--sun)}
+  a.gmap{color:inherit;text-decoration:underline dotted var(--ink3);text-underline-offset:3px}
+  a.gmap:hover{color:var(--sun);text-decoration-color:var(--sun)}
   .wrap{max-width:1180px;margin:0 auto;padding:18px 14px 60px}
   header{padding:14px 2px 10px}
   .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink2);margin:0 0 6px}
@@ -1251,7 +1253,9 @@ const tfmt = t => fmtTime.format(new Date(t * 1000));
 const dfmt = ds => fmtDateLong.format(new Date(ds * 1000));
 const dfmtS = ds => fmtDateShort.format(new Date(ds * 1000));
 const deg = (x, n) => x.toFixed(n == null ? 2 : n) + '°';
-const coord = (lat, lon) => `${Math.abs(lat).toFixed(5)}° ${lat >= 0 ? 'N' : 'S'}, ${Math.abs(lon).toFixed(5)}° ${lon >= 0 ? 'E' : 'W'}`;
+const coordTxt = (lat, lon) => `${Math.abs(lat).toFixed(5)}° ${lat >= 0 ? 'N' : 'S'}, ${Math.abs(lon).toFixed(5)}° ${lon >= 0 ? 'E' : 'W'}`;
+const gmapsUrl = (lat, lon) => `https://www.google.com/maps?q=${lat.toFixed(6)},${lon.toFixed(6)}`;
+const coord = (lat, lon) => `<a class="gmap" href="${gmapsUrl(lat, lon)}" target="_blank" rel="noopener" title="Open in Google Maps">${coordTxt(lat, lon)}</a>`;
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
 const state = {
@@ -1436,10 +1440,10 @@ function renderMonth() {
     const sel = ds === state.dayStart ? ' class="sel"' : '';
     if (!p) { rows += `<tr${sel} data-ds="${ds}"><td>${dfmtS(ds)}</td><td colspan="5" class="muted">no alignment on this coast</td></tr>`; continue; }
     const b = res.bands; const len = b.touch[0] && b.touch[1] ? Math.abs(b.touch[1].s - b.touch[0].s) * 1000 : NaN;
-    rows += `<tr${sel} data-ds="${ds}"><td>${dfmtS(ds)}</td><td>${describeCoastPoint(p.s, p.muni, p.lat, p.lon)}</td><td class="mono">${p.lat.toFixed(5)}, ${p.lon.toFixed(5)}</td><td class="mono">${tfmt(p.r.t).replace(/ .*$/, '')}</td><td class="mono">${deg(p.r.sunAz, 2)}</td><td class="mono">${isNaN(len) ? '–' : (len < 1000 ? Math.round(len) + ' m' : (len / 1000).toFixed(1) + ' km')}</td></tr>`;
+    rows += `<tr${sel} data-ds="${ds}"><td>${dfmtS(ds)}</td><td>${describeCoastPoint(p.s, p.muni, p.lat, p.lon)}</td><td class="mono"><a class="gmap" href="${gmapsUrl(p.lat, p.lon)}" target="_blank" rel="noopener" title="Open in Google Maps">${p.lat.toFixed(5)}, ${p.lon.toFixed(5)}</a></td><td class="mono">${tfmt(p.r.t).replace(/ .*$/, '')}</td><td class="mono">${deg(p.r.sunAz, 2)}</td><td class="mono">${isNaN(len) ? '–' : (len < 1000 ? Math.round(len) + ' m' : (len / 1000).toFixed(1) + ' km')}</td></tr>`;
   }
   $('monthBody').innerHTML = rows;
-  $('monthBody').querySelectorAll('tr[data-ds]').forEach(tr => tr.addEventListener('click', () => { setDate(+tr.dataset.ds); focusPrimary(state.res); }));
+  $('monthBody').querySelectorAll('tr[data-ds]').forEach(tr => tr.addEventListener('click', e => { if (e.target.closest('a')) return; setDate(+tr.dataset.ds); focusPrimary(state.res); }));
 }
 
 let yearTimer = null;
